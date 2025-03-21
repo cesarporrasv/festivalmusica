@@ -326,6 +326,9 @@ body {
   color: #000000;
   font-size: 2rem;
 }
+body.no-scroll {
+  overflow: hidden;
+}
 
 p {
   font-size: 2rem;
@@ -587,6 +590,37 @@ body > section {
   object-fit: cover;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  animation: fadeIn ease-in 0.3s;
+}
+.modal.fade-out {
+  animation: fadeOut ease-in 0.3s;
+}
+.modal img {
+  max-width: 100rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .contenedor-boletos {
   background-color: #4cb8b3;
 }
