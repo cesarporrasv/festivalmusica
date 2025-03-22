@@ -1,6 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+  fixedNav();
   crearGaleria();
 });
+
+function fixedNav() {
+  const header = document.querySelector(".header");
+  const sobreFestival = document.querySelector(".sobre-festival");
+
+  window.addEventListener("scroll", function () {
+    if (sobreFestival.getBoundingClientRect().bottom < 1) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+  });
+}
 
 function crearGaleria() {
   const cantidadImagenes = 16;
