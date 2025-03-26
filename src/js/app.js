@@ -24,7 +24,10 @@ function crearGaleria() {
 
   for (let i = 1; i <= cantidadImagenes; i++) {
     const imagen = document.createElement("IMG");
-    imagen.src = `src/img/gallery/full/${i}.jpg`;
+    imagen.loading = "lazy";
+    imagen.width = 300;
+    imagen.height = 200;
+    imagen.src = `src/img/gallery/thumb/${i}.jpg`;
     imagen.alt = "imagen galeria";
 
     //Event Handler
@@ -94,7 +97,7 @@ function scrollNav() {
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      
+
       const sectionScroll = e.target.getAttribute("href");
       const section = document.querySelector(sectionScroll);
 
